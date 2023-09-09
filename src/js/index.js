@@ -76,6 +76,7 @@ select.addEventListener('change', e => {
       createMarkupCards(catInfo);
     })
     .catch(err => {
+        catCard.classList.add(`is-hidden`);
       Notify.failure(error.textContent);
     })
     .finally(result => Loading.remove());
