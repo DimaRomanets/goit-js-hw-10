@@ -35,7 +35,7 @@ console.log(createMarkupOptins(data))
     new SlimSelect({
       select: select,
   settings: {
-    placeholderText: 'Custom Placeholder Text',
+    placeholderText: 'Select a cat',
   }
     });
   })
