@@ -28,11 +28,15 @@ fetchBreeds()
     select.classList.add('breed-select');
     loading.classList.replace('loader', 'is-hidden');
     
-    
-
-    createMarkupOptins(data);
+  
+console.log(createMarkupOptins(data))
+  
+    select.insertAdjacentHTML('beforeend', createMarkupOptins(data));
     new SlimSelect({
       select: select,
+  settings: {
+    placeholderText: 'Custom Placeholder Text',
+  }
     });
   })
   .catch(err => {
@@ -47,10 +51,10 @@ fetchBreeds()
 function createMarkupOptins(arr) {
   return arr
     .map(({ id, name }) => {
-      console.log({ id, name });
+    //   console.log({ id, name });
 
-      const option = `<option value=${id}>${name}</option>`;
-      select.insertAdjacentHTML('afterbegin', option);
+      return `<option value=${id}>${name}</option>`;
+     
     })
     .join('');
 
